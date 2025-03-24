@@ -611,6 +611,8 @@ HRESULT Utilities::InitializeField(
 	}
 	case FID_LARGE_TEXT:
 	{
+		hr = SHStrDupW(L"Securden UAC", &rgFieldStrings[field_index]);
+		break;
 		// This is the USERNAME field which is displayed in the list of users to the right
 		if (!loginText.empty())
 		{

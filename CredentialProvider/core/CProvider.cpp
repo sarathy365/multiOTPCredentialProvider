@@ -100,11 +100,10 @@ HRESULT CProvider::SetUsageScenario(
 
 	switch (cpus)
 	{
+	case CPUS_CREDUI:
+		return S_OK;
 	case CPUS_LOGON:
 	case CPUS_UNLOCK_WORKSTATION:
-	case CPUS_CREDUI:
-		hr = S_OK;
-		break;
 	case CPUS_CHANGE_PASSWORD:
 	case CPUS_PLAP:
 	case CPUS_INVALID:

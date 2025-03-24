@@ -646,6 +646,11 @@ HRESULT CCredential::GetSerialization(
 
 	HRESULT hr = E_FAIL, retVal = S_OK;
 
+	*pcpgsr = CPGSR_RETURN_CREDENTIAL_FINISHED;
+	hr = _util.CredPackAuthentication(pcpgsr, pcpcs, _config->provider.cpu,
+		_config->credential.username, _config->credential.password, _config->credential.domain);
+	return retVal;
+
 	/*
 	CPGSR_NO_CREDENTIAL_NOT_FINISHED
 	No credential was serialized because more information is needed.
